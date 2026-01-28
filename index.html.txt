@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Windows 12: Nova Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wallpaper"></div>
+  <div id="desktop" class="desktop">
+    <div class="desktop-icon" data-app="explorer">
+      <span class="icon">📁</span>
+      <span>Файлы</span>
+    </div>
+    <div class="desktop-icon" data-app="browser">
+      <span class="icon">🌐</span>
+      <span>NOVA Browser</span>
+    </div>
+    <div class="desktop-icon" data-app="games">
+      <span class="icon">🎮</span>
+      <span>Игры</span>
+    </div>
+    <div class="desktop-icon" data-app="pulse">
+      <span class="icon">✨</span>
+      <span>Pulse Center</span>
+    </div>
+    <div class="desktop-icon" data-app="about">
+      <span class="icon">🪟</span>
+      <span>Windows 12</span>
+    </div>
+  </div>
+
+  <div id="windows" class="windows-layer"></div>
+
+  <div class="taskbar">
+    <button id="startButton" class="taskbar-button">▦</button>
+    <div id="taskbarApps" class="taskbar-apps"></div>
+    <div class="taskbar-right">
+      <div id="clock" class="taskbar-clock"></div>
+      <button id="quickButton" class="taskbar-button">⚡</button>
+    </div>
+  </div>
+
+  <div id="startMenu" class="start-menu hidden">
+    <div class="start-header">
+      <div>
+        <div class="start-title">Windows 12 Nova</div>
+        <div class="start-subtitle">Свежий взгляд на ОС</div>
+      </div>
+      <input id="searchInput" type="search" placeholder="Поиск приложений и файлов" />
+    </div>
+    <div class="start-grid">
+      <button data-app="explorer">📁 Файлы</button>
+      <button data-app="browser">🌐 NOVA Browser</button>
+      <button data-app="games">🎮 Игры</button>
+      <button data-app="notepad">📝 Notepad</button>
+      <button data-app="settings">⚙️ Настройки</button>
+      <button data-app="pulse">✨ Pulse Center</button>
+      <button data-app="about">🪟 О системе</button>
+    </div>
+    <div class="start-footer">
+      <div class="profile">
+        <div class="avatar">RS</div>
+        <div>
+          <div>Репчик</div>
+          <small>Готов к работе</small>
+        </div>
+      </div>
+      <button id="powerButton" class="ghost">⏻</button>
+    </div>
+  </div>
+
+  <div id="quickPanel" class="quick-panel hidden">
+    <div class="quick-header">Pulse Control</div>
+    <div class="quick-grid">
+      <button data-toggle="focus">Фокус</button>
+      <button data-toggle="sound">Звук</button>
+      <button data-toggle="wifi">Wi‑Fi</button>
+      <button data-toggle="update">Обновления</button>
+    </div>
+    <div class="quick-slider">
+      <label>Яркость</label>
+      <input type="range" min="30" max="100" value="80" />
+    </div>
+  </div>
+
+  <template id="windowTemplate">
+    <div class="window">
+      <div class="window-header">
+        <div class="window-title">Window</div>
+        <div class="window-actions">
+          <button data-action="snap-left">⟸</button>
+          <button data-action="snap-right">⟹</button>
+          <button data-action="minimize">—</button>
+          <button data-action="maximize">▢</button>
+          <button data-action="close">✕</button>
+        </div>
+      </div>
+      <div class="window-content"></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
